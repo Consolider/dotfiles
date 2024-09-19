@@ -1,0 +1,15 @@
+#!/bin/bash
+while read file
+do
+    fullpath="$(pwd)/$file"
+    case "$1" in
+    "w")
+        cp "$file" ~/.cache/current_wallpaper.jpg &&
+        feh --bg-scale "$HOME/.cache/current_wallpaper.jpg" &&
+        notify-send -i "$HOME/.cache/current_wallpaper.png" "Wallpaper changed." ;;
+
+    "d")
+        rm "$file";;
+
+    esac
+done

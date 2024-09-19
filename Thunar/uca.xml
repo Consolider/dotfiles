@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1687792340087766-1</unique-id>
+	<command>kitty</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>image-x-generic</icon>
+	<name>Convert to jpg</name>
+	<submenu></submenu>
+	<unique-id>1688788011868349-1</unique-id>
+	<command>/home/user/.config/Thunar/bin/thunar-convert-to-jpg.sh -f %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.png</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>video-display</icon>
+	<name>Media info</name>
+	<submenu></submenu>
+	<unique-id>1688788479502011-1</unique-id>
+	<command>/home/user/.config/Thunar/bin/thunar-media-info.sh -f %f -t %n</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>org.xfce.tumbler</icon>
+	<name>Create thumbnail</name>
+	<submenu></submenu>
+	<unique-id>1688842589467063-1</unique-id>
+	<command>/home/user/.config/Thunar/bin/thunar-create-thumbnail.sh -q %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+</actions>
