@@ -1,0 +1,14 @@
+#!/bin/bash
+#IDENTIFIER=$"unicode"
+weather() {
+    LOCATION=London
+
+    if [ "$IDENTIFIER" = "unicode" ]; then
+        DATA=$(curl -s wttr.in/$LOCATION?format=1)
+        echo $DATA
+    else
+        DATA=$(curl -s wttr.in/$LOCATION?format=1 | grep -o ".[0-9].*")
+        echo $DATA
+    fi
+}
+weather
