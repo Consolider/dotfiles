@@ -8,7 +8,6 @@ fi
 
 username=$(id -u -n 1000)
 
-
 ## Setting up mirrors for optimal download
 sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 
@@ -22,14 +21,13 @@ pacman -S --noconfirm xorg-server xorg-xinit xorg-xrandr bspwm sxhkd lightdm lig
 
 ## Installing More Programs
 pacman -S --noconfirm alsa-utils bash-completion dunst feh flameshot git gnome-calculator htop kitty lxappearance neofetch mpv pavucontrol picom polybar python-pywal ranger rofi sxiv thunar wget xclip
-# kdenlive mtn
 
 ## Extra functions for Thunar
-#pacman -S --noconfirm tumbler ffmpegthumbnailer gvfs zenity
+pacman -S --noconfirm tumbler ffmpegthumbnailer gvfs zenity
 ## GTK Themes (Thunar)
-#pacman -S --noconfirm adapta-gtk-theme arc-gtk-theme
+pacman -S --noconfirm adapta-gtk-theme arc-gtk-theme
 ## QT Themes (kdenlive)
-#pacman -S --noconfirm breeze
+pacman -S --noconfirm breeze
 
 echo -ne "
 -------------------------------------------------------------------------
@@ -69,10 +67,8 @@ fi
 ## Enable services
 systemctl enable lightdm.service
 
-
 ## Install Themes
 pacman -S --noconfirm adapta-gtk-theme
-
 
 ## Create directories
 mkdir -p /home/$username/.config
@@ -117,4 +113,3 @@ rm /home/$username/.config/.dmrc
 rm /home/$username/.config/.vimrc
 
 reboot
-
