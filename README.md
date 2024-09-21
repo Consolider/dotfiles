@@ -1,12 +1,12 @@
-# Arch Linux dotfiles
-
+# Arch Linux dotfiles<br />
+Run as root after fresh install of Arch Linux.<br />
 `git clone https://github.com/Consolider/dotfiles.git`<br />
 `cd dotfiles`<br />
-`sudo chmod +x 0.install-git.sh`<br />
-`sudo ./0.install-git.sh`<br />
-
+`chmod +x 0.install-git.sh`<br />
+`./0.install-git.sh`<br />
+<br />
 Computer will install and reboot.<br />
-After reboot:<br />
+After reboot login as user and run:<br />
 `cd dotfiles`<br />
 `sudo chmod +x 1.post-install.git.sh`<br />
-`sudo ./1.post-install.git.sh`<br />
+`./1.post-install.git.sh`<br />
