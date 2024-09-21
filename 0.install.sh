@@ -118,6 +118,7 @@ rm -R /home/$username/.config/extras
 rm /home/$username/.config/0.install.sh
 rm /home/$username/.config/1.post-install.sh
 rm /home/$username/.config/README.md
+rm /home/$username/.config/.bash_aliases
 rm /home/$username/.config/.bashrc
 rm /home/$username/.config/.dmrc
 rm /home/$username/.config/.vimrc
