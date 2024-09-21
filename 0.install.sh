@@ -94,18 +94,30 @@ else
   cp /root/dotfiles/extras/{updates-pacman-aurhelper,weather} /home/$username/.local/bin/polybar
 fi
 
-## Move and remove unneeded files from ~/.config
+## Move unneeded files from ~/.config
+# LightDM
 mv -v /home/$username/.config/lightdm/*.conf /etc/lightdm
 mv -v /home/$username/.config/lightdm/*.jpg /usr/share/pixmaps
-chmod 644 /etc/lightdm/*.conf
-chmod 644 /usr/share/pixmaps/*.jpg
-rm -R /home/$username/.config/lightdm
+# MPV
 mv -v /home/$username/.config/mpv/mpv.conf /etc/mpv
-chmod 644 /etc/mpv/*.conf
+# Dunst
 mv -v /home/$username/.config/dunst/changevolume /usr/bin
-chmod 755 /usr/bin/changevolume
+# Scripts
 mv -v /home/$username/.config/scripts/* /home/$username/.scripts
+
+## Remove unneeded folders and files
+rm -R /home/$username/.config/extras
+rm -R /home/$username/.config/lightdm
 rm -R /home/$username/.config/scripts
+#rm /home/$username/.config/0.install.sh
+#rm /home/$username/.config/1.post-install.sh
+rm /home/$username/.config/*.sh
+rm /home/$username/.config/README.md
+#rm /home/$username/.config/.bash_aliases
+#rm /home/$username/.config/.bashrc
+#rm /home/$username/.config/.dmrc
+#rm /home/$username/.config/.vimrc
+rm /home/$username/.config/.*
 
 ## Fix ownership
 chown -R $username:$username /home/$username
@@ -114,16 +126,12 @@ find /home/$username -type f -print0 | xargs -0 chmod 0644
 chmod 755 /home/$username/.config/bspwm/bspwmrc
 chmod +x /home/$username/.config/polybar/launch.sh
 chmod +x /home/$username/.config/sxiv/exec/*
-chmod +x /home/$username/.local/bin/sxhkd/*chmod +x /home/$username/.local/bin/polybar/*
-
-## Remove unneeded files
-rm -R /home/$username/.config/extras
-rm /home/$username/.config/0.install.sh
-rm /home/$username/.config/1.post-install.sh
-rm /home/$username/.config/README.md
-rm /home/$username/.config/.bash_aliases
-rm /home/$username/.config/.bashrc
-rm /home/$username/.config/.dmrc
-rm /home/$username/.config/.vimrc
+chmod +x /home/$username/.local/bin/sxhkd/*
+chmod +x /home/$username/.local/bin/polybar/*
+chmod +x /home/$username/.scripts/*
+chmod 644 /etc/lightdm/*.conf
+chmod 644 /etc/mpv/*.conf
+chmod 755 /usr/bin/changevolume
+chmod 644 /usr/share/pixmaps/*.jpg
 
 reboot
