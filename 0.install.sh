@@ -109,8 +109,8 @@ chmod +x /home/$username/.local/bin/sxhkd/*chmod +x /home/$username/.local/bin/p
 
 ## Remove unneeded files
 rm -R /home/$username/.config/extras
-rm /home/$username/.config/0.install.git.sh
-rm /home/$username/.config/1.post-install.git.sh
+rm /home/$username/.config/0.install.sh
+rm /home/$username/.config/1.post-install.sh
 rm /home/$username/.config/README.md
 rm /home/$username/.config/.bashrc
 rm /home/$username/.config/.dmrc
