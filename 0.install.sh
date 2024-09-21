@@ -79,11 +79,13 @@ mkdir -p /home/$username/.scripts
 WHOAMI=$(whoami)
 if $WHOAMI == $username; then
   cp -rv /home/$username/dotfiles/* /home/$username/.config
+  cp /home/$username/dotfiles/.bash_aliases /home/$username
   cp /home/$username/dotfiles/.bashrc /home/$username
   cp /home/$username/dotfiles/.dmrc /home/$username
   cp /home/$username/dotfiles/.vimrc /home/$username
 else
   cp -rv /root/dotfiles/* /home/$username/.config
+  cp /root/dotfiles/.bash_aliases /home/$username
   cp /root/dotfiles/.bashrc /home/$username
   cp /root/dotfiles/.dmrc /home/$username
   cp /root/dotfiles/.vimrc /home/$username
