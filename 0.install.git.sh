@@ -100,7 +100,7 @@ chmod 755 /usr/bin/changevolume
 #cp -v /home/$username/dotfiles/extras/{updates-pacman-aurhelper,weather} /home/$username/.local/bin/polybar
 
 ## Fix ownership
-chmod -R 644 /home/$username
+chmod -R 755 /home/$username
 chown -R $username:$username /home/$username
 chmod +x /home/$username/.config/polybar/launch.sh
 chmod +x /home/$username/.config/sxiv/exec/*
