@@ -67,9 +67,6 @@ fi
 ## Enable services
 systemctl enable lightdm.service
 
-## Install Themes
-pacman -S --noconfirm adapta-gtk-theme
-
 ## Create directories
 mkdir -p /home/$username/.config
 mkdir -p /home/$username/.local/bin/{sxhkd,polybar}
@@ -107,6 +104,8 @@ mv -v /home/$username/.config/mpv/mpv.conf /etc/mpv
 chmod 644 /etc/mpv/*.conf
 mv -v /home/$username/.config/dunst/changevolume /usr/bin
 chmod 755 /usr/bin/changevolume
+mv -v /home/$username/.config/scripts/* /home/$username/.scripts
+rm -R /home/$username/.config/scripts
 
 ## Fix ownership
 chown -R $username:$username /home/$username
