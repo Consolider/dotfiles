@@ -76,10 +76,18 @@ mkdir -p /home/$username/.local/bin/{sxhkd,polybar}
 mkdir -p /home/$username/.scripts
 
 ## User settings
-cp -rv /home/$username/dotfiles/* /home/$username/.config
-cp /home/$username/dotfiles/.bashrc /home/$username
-cp /home/$username/dotfiles/.dmrc /home/$username
-cp /home/$username/dotfiles/.vimrc /home/$username
+WHOAMI=$(whoami)
+if $WHOAMI == $username; then
+  cp -rv /home/$username/dotfiles/* /home/$username/.config
+  cp /home/$username/dotfiles/.bashrc /home/$username
+  cp /home/$username/dotfiles/.dmrc /home/$username
+  cp /home/$username/dotfiles/.vimrc /home/$username
+else
+  cp -rv /root/dotfiles/* /home/$username/.config
+  cp /root/dotfiles/.bashrc /home/$username
+  cp /root/dotfiles/.dmrc /home/$username
+  cp /root/dotfiles/.vimrc /home/$username
+fi
 
 mv -v /home/$username/.config/lightdm/*.conf /etc/lightdm
 mv -v /home/$username/.config/lightdm/*.jpg /usr/share/pixmaps
