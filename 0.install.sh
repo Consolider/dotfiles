@@ -75,7 +75,7 @@ mkdir -p /home/$username/.config
 mkdir -p /home/$username/.local/bin/{sxhkd,polybar}
 mkdir -p /home/$username/.scripts
 
-## User settings
+## Copy files
 WHOAMI=$(whoami)
 if $WHOAMI == $username; then
   cp -rv /home/$username/dotfiles/* /home/$username/.config
@@ -83,14 +83,21 @@ if $WHOAMI == $username; then
   cp /home/$username/dotfiles/.bashrc /home/$username
   cp /home/$username/dotfiles/.dmrc /home/$username
   cp /home/$username/dotfiles/.vimrc /home/$username
+  ## Extras
+  cp /home/$username/dotfiles/extras/winhide /home/$username/.local/bin/sxhkd
+  cp /home/$username/dotfiles/extras/{updates-pacman-aurhelper,weather} /home/$username/.local/bin/polybar
 else
   cp -rv /root/dotfiles/* /home/$username/.config
   cp /root/dotfiles/.bash_aliases /home/$username
   cp /root/dotfiles/.bashrc /home/$username
   cp /root/dotfiles/.dmrc /home/$username
   cp /root/dotfiles/.vimrc /home/$username
+  ## Extras
+  cp /root/dotfiles/extras/winhide /home/$username/.local/bin/sxhkd
+  cp /root/dotfiles/extras/{updates-pacman-aurhelper,weather} /home/$username/.local/bin/polybar
 fi
 
+## Move and remove unneeded files from ~/.config
 mv -v /home/$username/.config/lightdm/*.conf /etc/lightdm
 mv -v /home/$username/.config/lightdm/*.jpg /usr/share/pixmaps
 chmod 644 /etc/lightdm/*.conf
@@ -100,10 +107,6 @@ mv -v /home/$username/.config/mpv/mpv.conf /etc/mpv
 chmod 644 /etc/mpv/*.conf
 mv -v /home/$username/.config/dunst/changevolume /usr/bin
 chmod 755 /usr/bin/changevolume
-
-## Extras
-cp -v /home/$username/dotfiles/extras/winhide /home/$username/.local/bin/sxhkd
-cp -v /home/$username/dotfiles/extras/{updates-pacman-aurhelper,weather} /home/$username/.local/bin/polybar
 
 ## Fix ownership
 chown -R $username:$username /home/$username
