@@ -14,7 +14,7 @@ sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 
 ## Add sudo no password rights
 #sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
-echo "$username ALL=(ALL:ALL) NOPASSWD: ALL/" >> /etc/sudoers
+echo "$username ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 ## Installing Essential Programs
 pacman -Syy --noconfirm
