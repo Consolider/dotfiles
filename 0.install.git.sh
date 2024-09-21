@@ -81,9 +81,9 @@ mkdir -p /home/$username/.scripts
 
 ## User settings
 cp -rv /home/$username/dotfiles/* /home/$username/.config
-#cp /home/$username/dotfiles/.bashrc /home/$username
-#cp /home/$username/dotfiles/.dmrc /home/$username
-#cp /home/$username/dotfiles/.vimrc /home/$username
+cp /home/$username/dotfiles/.bashrc /home/$username
+cp /home/$username/dotfiles/.dmrc /home/$username
+cp /home/$username/dotfiles/.vimrc /home/$username
 
 mv -v /home/$username/.config/lightdm/*.conf /etc/lightdm
 mv -v /home/$username/.config/lightdm/*.jpg /usr/share/pixmaps
@@ -96,14 +96,23 @@ mv -v /home/$username/.config/dunst/changevolume /usr/bin
 chmod 755 /usr/bin/changevolume
 
 ## Extras
-#cp -v /home/$username/dotfiles/extras/winhide /home/$username/.local/bin/sxhkd
-#cp -v /home/$username/dotfiles/extras/{updates-pacman-aurhelper,weather} /home/$username/.local/bin/polybar
+cp -v /home/$username/dotfiles/extras/winhide /home/$username/.local/bin/sxhkd
+cp -v /home/$username/dotfiles/extras/{updates-pacman-aurhelper,weather} /home/$username/.local/bin/polybar
 
 ## Fix ownership
-chmod -R 755 /home/$username
 chown -R $username:$username /home/$username
+find /home/$username -type d -print0 | xargs -0 chmod 0755
+find /home/$username -type f -print0 | xargs -0 chmod 0644
 chmod +x /home/$username/.config/polybar/launch.sh
 chmod +x /home/$username/.config/sxiv/exec/*
+
+## Remove unneeded files
+rm /home/$username/.config/0.install.git.sh
+rm /home/$username/.config/1.post-install.git.sh
+rm /home/$username/.config/README.md
+rm /home/$username/.config/.bashrc
+rm /home/$username/.config/.dmrc
+rm /home/$username/.config/.vimrc
 
 reboot
 
