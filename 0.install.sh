@@ -71,6 +71,9 @@ systemctl enable lightdm.service
 mkdir -p /home/$username/.config
 mkdir -p /home/$username/.local/bin/{sxhkd,polybar}
 mkdir -p /home/$username/.scripts
+mkdir -p /home/$username/Documents
+mkdir -p /home/$username/Downloads
+mkdir -p /home/$username/Pictures/Screenshots
 
 ## Copy files
 WHOAMI=$(whoami)
@@ -80,7 +83,6 @@ if $WHOAMI == $username; then
   cp /home/$username/dotfiles/.bashrc /home/$username
   cp /home/$username/dotfiles/.dmrc /home/$username
   cp /home/$username/dotfiles/.vimrc /home/$username
-  ## Extras
   cp /home/$username/dotfiles/extras/winhide /home/$username/.local/bin/sxhkd
   cp /home/$username/dotfiles/extras/{updates-pacman-aurhelper,weather} /home/$username/.local/bin/polybar
 else
@@ -89,19 +91,21 @@ else
   cp /root/dotfiles/.bashrc /home/$username
   cp /root/dotfiles/.dmrc /home/$username
   cp /root/dotfiles/.vimrc /home/$username
-  ## Extras
   cp /root/dotfiles/extras/winhide /home/$username/.local/bin/sxhkd
   cp /root/dotfiles/extras/{updates-pacman-aurhelper,weather} /home/$username/.local/bin/polybar
+  mv /root/dotfiles /home/$username
 fi
 
 ## Move unneeded files from ~/.config
+# Dunst
+mv -v /home/$username/.config/dunst/changevolume /usr/bin
 # LightDM
 mv -v /home/$username/.config/lightdm/*.conf /etc/lightdm
 mv -v /home/$username/.config/lightdm/*.jpg /usr/share/pixmaps
 # MPV
 mv -v /home/$username/.config/mpv/mpv.conf /etc/mpv
-# Dunst
-mv -v /home/$username/.config/dunst/changevolume /usr/bin
+# Rofi
+mv -v /home/$username/.config/rofi/colors-rofi-pywal.rasi /home/$username/.cache/wal
 # Scripts
 mv -v /home/$username/.config/scripts/* /home/$username/.scripts
 
