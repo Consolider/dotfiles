@@ -104,8 +104,6 @@ mv -v /home/$username/.config/lightdm/*.conf /etc/lightdm
 mv -v /home/$username/.config/lightdm/*.jpg /usr/share/pixmaps
 # MPV
 mv -v /home/$username/.config/mpv/mpv.conf /etc/mpv
-# Rofi
-mv -v /home/$username/.config/rofi/colors-rofi-pywal.rasi /home/$username/.cache/wal
 # Scripts
 mv -v /home/$username/.config/scripts/* /home/$username/.scripts
 
@@ -113,14 +111,8 @@ mv -v /home/$username/.config/scripts/* /home/$username/.scripts
 rm -R /home/$username/.config/extras
 rm -R /home/$username/.config/lightdm
 rm -R /home/$username/.config/scripts
-#rm /home/$username/.config/0.install.sh
-#rm /home/$username/.config/1.post-install.sh
 rm /home/$username/.config/*.sh
 rm /home/$username/.config/README.md
-#rm /home/$username/.config/.bash_aliases
-#rm /home/$username/.config/.bashrc
-#rm /home/$username/.config/.dmrc
-#rm /home/$username/.config/.vimrc
 rm /home/$username/.config/.*
 
 ## Fix ownership
