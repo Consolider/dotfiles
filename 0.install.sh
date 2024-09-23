@@ -20,7 +20,7 @@ pacman -Syy --noconfirm
 pacman -S --noconfirm xorg-server xorg-xinit xorg-xrandr bspwm sxhkd lightdm lightdm-slick-greeter unzip
 
 ## Installing More Programs
-pacman -S --noconfirm alsa-utils bash-completion dunst feh flameshot git gnome-calculator htop kitty lxappearance neofetch mpv pavucontrol picom polybar python-pywal ranger rofi sxiv thunar wget xclip
+pacman -S --noconfirm alsa-utils bash-completion dunst feh flameshot git gnome-calculator htop kitty lxappearance mpv neofetch pacman-contrib pavucontrol picom polybar python-pywal ranger rofi sxiv thunar wget xclip
 
 ## Extra functions for Thunar
 pacman -S --noconfirm tumbler ffmpegthumbnailer gvfs zenity
