@@ -156,11 +156,15 @@ super + {o,i}
     bspc wm -h on
 
 # focus or send to the given desktop
-# Single monitor
-super + {_,shift + }{1-9,0}
+# Single monitor, using numbers
+super + {_,shift + } {1-9,0}
    bspc {desktop -f,node -d} '^{1-9,10}'
 
-# Multi monitor, using keypad, dekstop 1-7 on screen 1, desktop 8-0 on screen2
+# Single monitor, using keypad
+#super + {_,shift + } {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior,KP_Insert}
+#    bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Multi monitor, using keypad, dekstop 1-7 on screen 1, desktop 8-0 on screen2, x2
 #super + {_,shift + } {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior,KP_Insert}
 #    bspc {desktop -f,node -d} '^{1-7,15,16,17}'
 #super + {_,shift + } KP_Enter ; {KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior,KP_Insert}
