@@ -33,7 +33,7 @@ echo -ne "
 --------------------------------------------------
 "
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
-unzip FiraCode.zip -d /usr/share/fonts
+sudo unzip FiraCode.zip -d /usr/share/fonts
 fc-cache -vf
 rm ./FiraCode.zip
 
