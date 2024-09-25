@@ -53,20 +53,13 @@ then
     done
 fi
 
-#echo "-----------------------------------------------------"
-#echo "Start Arch update"
-#echo "-----------------------------------------------------"
-
-#sudo pacman -Syu
-
-#notify-send "Arch Update complete"
-
 echo "-----------------------------------------------------"
 echo "Start update"
 echo "-----------------------------------------------------"
 echo ""
 
 yay
-
+xset r rate 190 33
+./config/polybar/launch.sh
 notify-send "Update complete"
 
