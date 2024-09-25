@@ -60,6 +60,6 @@ echo ""
 
 yay
 xset r rate 190 33
-./config/polybar/launch.sh
+~/.config/polybar/launch.sh
 notify-send "Update complete"
 
