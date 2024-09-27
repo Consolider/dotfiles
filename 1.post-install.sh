@@ -24,7 +24,7 @@ echo -ne "
           Installing Additional Programs
 --------------------------------------------------
 "
-yay -Sua betterlockscreen pfetch --noconfirm
+yay -Sua betterlockscreen pfetch timeshift --noconfirm
 
 
 echo -ne "
