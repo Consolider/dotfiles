@@ -29,7 +29,7 @@ while true; do
     esac
 done
 
-if [[ $(_isInstalledYay "Timeshift") == 1 ]];
+if [[ $(_isInstalledYay "Timeshift") == 0 ]];    # 0 = true
 then
     while true; do
         read -p "DO YOU WANT TO CREATE A SNAPSHOT? (Yy/Nn): " yn
