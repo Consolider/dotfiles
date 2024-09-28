@@ -120,6 +120,7 @@ chown -R $username:$username /home/$username
 find /home/$username -type d -print0 | xargs -0 chmod 0755
 find /home/$username -type f -print0 | xargs -0 chmod 0644
 chmod 755 /home/$username/.config/bspwm/bspwmrc
+chmod +x /home/$username/.config/Thunar/bin/*
 chmod +x /home/$username/.config/polybar/launch.sh
 chmod +x /home/$username/.config/sxiv/exec/*
 chmod +x /home/$username/.local/bin/sxhkd/*
